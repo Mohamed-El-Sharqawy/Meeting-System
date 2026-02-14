@@ -13,6 +13,6 @@ export const databaseConfig = (): TypeOrmModuleOptions => ({
   password: process.env.DATABASE_PASSWORD || 'changeme123',
   database: process.env.DATABASE_NAME || 'arabicmeet',
   entities: [UserEntity, RoomEntity, ParticipantEntity, AuditLogEntity, AdminEntity],
-  synchronize: false, // معطل لتجنب مشاكل التعديل التلقائي
+  synchronize: true, // مفعل لإنشاء الجداول تلقائياً
   logging: process.env.NODE_ENV === 'development',
 });
